@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/topFrame"
+        android:layout_width="411dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="8dp"
+        android:background="#99000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/preview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="#000000"
+        android:contentDescription="@string/photo_preview"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/paintView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@+id/topFrame"
+        app:layout_constraintTop_toTopOf="@+id/topFrame"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="@string/photo"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/preview"
+        app:layout_constraintStart_toStartOf="@+id/preview"
+        app:layout_constraintTop_toBottomOf="@id/preview" />
+
+
+    <TextView
+        android:id="@+id/classificationResultView"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#333333"
+        android:gravity="center"
+        android:minHeight="56dp"
+        android:padding="4dp"
+        android:text="@string/classification"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="@+id/topFrame"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/confidenceTextView"
+        android:layout_width="212dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="182dp"
+        android:layout_marginTop="72dp"
+        android:background="#000000"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="@string/confidence"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.tensorflowsample.PaintView
+        android:id="@+id/paintView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/bottomFrame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#99000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/paintView" />
+
+    <Button
+        android:id="@+id/classifyImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/take_photo"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomFrame"
+        app:layout_constraintEnd_toEndOf="@+id/bottomFrame"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="@+id/bottomFrame"
+        app:layout_constraintTop_toTopOf="@+id/bottomFrame"
+        app:layout_constraintVertical_bias="0.49" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/clear"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomFrame"
+        app:layout_constraintEnd_toEndOf="@+id/bottomFrame"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/bottomFrame"
+        app:layout_constraintTop_toTopOf="@+id/bottomFrame"
+        app:layout_constraintVertical_bias="0.49" />
+
+    <Button
+        android:id="@+id/updateModelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/update_model"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomFrame"
+        app:layout_constraintEnd_toEndOf="@+id/bottomFrame"
+        app:layout_constraintHorizontal_bias="0.90"
+        app:layout_constraintStart_toStartOf="@+id/bottomFrame"
+        app:layout_constraintTop_toTopOf="@+id/bottomFrame"
+        app:layout_constraintVertical_bias="0.49" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

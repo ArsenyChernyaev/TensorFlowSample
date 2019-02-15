@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TensorFlowSample</string>
+    <string name="take_photo">Classify image</string>
+    <string name="photo">Photo</string>
+    <string name="photo_preview">Preview</string>
+    <string name="confidence">Confidence: %f</string>
+    <string name="clear">Clear</string>
+    <string name="update_model">Update model</string>
+    <string name="classification">Classification: %s</string>
+</resources>
